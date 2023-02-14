@@ -123,7 +123,7 @@ while task.wait(680) do
 local entityTable = Spawner.createEntity({
     CustomName = "A-60", -- Custom name of your entity
     Model = "rbxassetid:///12263106166", -- Can be GitHub file or rbxassetid
-    Speed = 380, -- Percentage, 100 = default Rush speed
+    Speed = 350, -- Percentage, 100 = default Rush speed
     DelayTime = 3, -- Time before starting cycles (seconds)
     HeightOffset = 0.5,
     CanKill = true,
@@ -227,23 +227,23 @@ local entityTable = Spawner.createEntity({
     BreakLights = true,
     FlickerLights = {
         true, -- Enabled/Disabled
-        1, -- Time (seconds)
+        80, -- Time (seconds)
     },
     Cycles = {
         Min = 1,
         Max = 1,
-        WaitTime = 1,
+        WaitTime = 0.1,
     },
     CamShake = {
         true, -- Enabled/Disabled
-        {3.5, 20, 0.1, 1}, -- Shake values (don't change if you don't know)
+        {5, 15, 0.1, 1}, -- Shake values (don't change if you don't know)
         100, -- Shake start distance (from Entity to you)
     },
     Jumpscare = {
-        false, -- Enabled/Disabled
+        true, -- Enabled/Disabled
         {
-            Image1 = "rbxassetid://10483855823", -- Image1 url
-            Image2 = "rbxassetid://10483999903", -- Image2 url
+            Image1 = "rbxassetid://11394027278, -- Image1 url
+            Image2 = "rbxassetid://11395249153, -- Image2 url
             Shake = true,
             Sound1 = {
                 10483790459, -- SoundId
@@ -264,7 +264,7 @@ local entityTable = Spawner.createEntity({
             },
         },
     },
-    CustomDialog = {"You Died to Dear God", "He is slow so run", "Hiding wont work", "Gl."}, -- Custom death message
+    CustomDialog = {"You Died to Dear God", "He is slow so run", "Hiding wont work", "its impossible for any human kind to up close only a god can."}, -- Custom death message
 })
 
 
@@ -306,7 +306,7 @@ end)
 Spawn1()
 
 Spawn1 = coroutine.wrap(function()
-while task.wait(610) do
+while task.wait(560) do
 -- Create entity
 game.Lighting.MainColorCorrection.TintColor = Color3.fromRGB(102, 255, 250)
 game.Lighting.MainColorCorrection.Contrast = 1
@@ -319,7 +319,7 @@ TW:Play()
 local entityTable = Spawner.createEntity({
     CustomName = "Silence", -- Custom name of your entity
     Model = "rbxassetid:////11616516367", -- Can be GitHub file or rbxassetid
-    Speed = 100, -- Percentage, 100 = default Rush speed
+    Speed = 40, -- Percentage, 100 = default Rush speed
     DelayTime = 2, -- Time before starting cycles (seconds)
     HeightOffset = 0,
     CanKill = true,
@@ -407,15 +407,18 @@ end)
 Spawn1()
 
 Spawn1 = coroutine.wrap(function()
-while task.wait(255) do
-local Reboundcolor = Instance.new("ColorCorrectionEffect",game.Lighting) game.Debris:AddItem(Reboundcolor,24)
-				Reboundcolor.Name = "Warn"
-				Reboundcolor.TintColor = Color3.fromRGB(65, 138, 255) Reboundcolor.Saturation = -0.7 Reboundcolor.Contrast = 0.2
-				game.TweenService:Create(Reboundcolor,TweenInfo.new(15),{TintColor = Color3.fromRGB(255, 255, 255),Saturation = 0, Contrast = 0}):Play()
-				camShake:ShakeOnce(10,3,0.1,6,2,0.5)
+while task.wait(400) do
 -- Create entity
+game.Lighting.MainColorCorrection.TintColor = Color3.fromRGB(286, 255, 245)
+game.Lighting.MainColorCorrection.Contrast = 1
+local tween = game:GetService("TweenService")
+tween:Create(game.Lighting.MainColorCorrection, TweenInfo.new(2.5), {Contrast = 0}):Play()
+local TweenService = game:GetService("TweenService")
+local TW = TweenService:Create(game.Lighting.MainColorCorrection, TweenInfo.new(3),{TintColor = Color3.fromRGB(255, 255, 255)})
+TW:Play()
+
 local entityTable = Spawner.createEntity({
-    CustomName = "Depth", -- Custom name of your entity
+    Custom Name = "Depth", -- Custom name of your entity
     Model = "rbxassetid:////11524906962, -- Can be GitHub file or rbxassetid
     Speed = 120, -- Percentage, 100 = default Rush speed
     DelayTime = 2, -- Time before starting cycles (seconds)
@@ -463,7 +466,7 @@ local entityTable = Spawner.createEntity({
             },
         },
     },
-    CustomDialog = {"You died to Depth", "hes pretty chill", "just hide when you hear swirling", "good luck."}, -- Custom death message
+    CustomDialog = {"You died to Depth", "hes a hard one", "just hide when you hear swirling", "do this when it happens!."}, -- Custom death message
 })
 
 
@@ -506,13 +509,19 @@ Spawn1()
 
 
 Spawn1 = coroutine.wrap(function()
-while task.wait(400) do
+while task.wait(264) do
+game:GetService("ReplicatedStorage").GameData.LatestRoom:GetPropertyChangedSignal("Value"):Wait()
+local Reboundcolor = Instance.new("ColorCorrectionEffect",game.Lighting) game.Debris:AddItem(Reboundcolor,24)
+				Reboundcolor.Name = "Warn"
+				Reboundcolor.TintColor = Color3.fromRGB(65, 138, 255) Reboundcolor.Saturation = -0.7 Reboundcolor.Contrast = 0.2
+				game.TweenService:Create(Reboundcolor,TweenInfo.new(15),{TintColor = Color3.fromRGB(255, 255, 255),Saturation = 0, Contrast = 0}):Play()
+				camShake:ShakeOnce(10,3,0.1,6,2,0.5)
 -- Create entity
 local entityTable = Spawner.createEntity({
     CustomName = "B-60", -- Custom name of your entity
     Model = "rbxassetid:////11801716344", -- Can be GitHub file or rbxassetid
     Speed = 500, -- Percentage, 100 = default Rush speed
-    DelayTime = 4, -- Time before starting cycles (seconds)
+    DelayTime = 2, -- Time before starting cycles (seconds)
     HeightOffset = 0,
     CanKill = true,
     KillRange = 20,
@@ -557,7 +566,7 @@ local entityTable = Spawner.createEntity({
             },
         },
     },
-    CustomDialog = {"You died to B-60", "he is fast tho so Yeah", "hide fast", "he Rebounds 1-3 times."}, -- Custom death message
+    CustomDialog = {"You died to B-60", "his speed is fast", "hide fast", "he Rebounds 1-3 times."}, -- Custom death message
 })
 
 
