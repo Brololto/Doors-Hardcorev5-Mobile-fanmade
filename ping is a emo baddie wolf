@@ -169,7 +169,7 @@ local entityTable = Spawner.createEntity({
             },
         },
     },
-    CustomDialog = {"You Died to A-60", "He screams among", "hide when this happens", "his presenceis known."}, -- Custom death message
+    CustomDialog = {"You Died to A-60", "He screams among", "hide when this happens", "his presence is known."}, -- Custom death message
 })
 
 
@@ -327,7 +327,7 @@ local entityTable = Spawner.createEntity({
     BackwardsMovement = false,
     BreakLights = true,
     FlickerLights = {
-        true, -- Enabled/Disabled
+        false, -- Enabled/Disabled
         1, -- Time (seconds)
     },
     Cycles = {
