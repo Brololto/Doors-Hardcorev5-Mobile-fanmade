@@ -407,7 +407,7 @@ end)
 Spawn1()
 
 Spawn1 = coroutine.wrap(function()
-while task.wait(400) do
+while task.wait(65) do
 -- Create entity
 game.Lighting.MainColorCorrection.TintColor = Color3.fromRGB(286, 255, 245)
 game.Lighting.MainColorCorrection.Contrast = 1
@@ -417,20 +417,42 @@ local TweenService = game:GetService("TweenService")
 local TW = TweenService:Create(game.Lighting.MainColorCorrection, TweenInfo.new(3),{TintColor = Color3.fromRGB(255, 255, 255)})
 TW:Play()
 
-local entityTable = Spawner.createEntity({
-    Custom Name = "Depth", -- Custom name of your entity
-    Model = "rbxassetid:////11524906962, -- Can be GitHub file or rbxassetid
-    Speed = 120, -- Percentage, 100 = default Rush speed
-    DelayTime = 2, -- Time before starting cycles (seconds)
-    HeightOffset = 0,
+local entity = Spawner.createEntity({
+    CustomName = "Specimen2", -- Custom name of your entity
+    Model = "rbxassetid:////502243972", -- Can be GitHub file or rbxassetid
+    Speed = 50, -- Percentage, 100 = default Rush speed
+    DelayTime = 5, -- Time before starting cycles (seconds)
+    HeightOffset = 1,
     CanKill = true,
-    KillRange = 40,
+    NoDieOnCrouching = false,
+    NoHiding = true,
+    AntiCrucifix = true,
+    KillRange = 100,
+    OneRoom = false,
+    DieOnLook = false,
+    BreakLights = false,
     BackwardsMovement = false,
-    BreakLights = true,
+     MovementDeath = {
+        true, -- Turned On?
+        '1',  --- '1'= 'Instant Without Being Looked out' | '2' = 'With Being Looked At'
+    },
     FlickerLights = {
-        true, -- Enabled/Disabled
+        false, -- Enabled/Disabled
         1, -- Time (seconds)
     },
+EntitySounds = { -- Can Get rid Of
+PlaySound = {
+              "", -- SoundId Link or Roblox ID
+            { Volume = 5 }, -- Sound properties
+       },
+        
+                   
+          Footsteps = {
+             "https://github.com/MuhXd/Models/blob/main/video0-1-3.mp3?raw=true", -- SoundId Link or Roblox ID
+              { Volume = 5 }, -- Sound properties
+          },
+    }, -- Up to Here
+
     Cycles = {
         Min = 1,
         Max = 1,
@@ -442,18 +464,19 @@ local entityTable = Spawner.createEntity({
         100, -- Shake start distance (from Entity to you)
     },
     Jumpscare = {
-        true, -- Enabled/Disabled
+        false, -- Enabled/Disabled
         {
+            Type = "2", -- "Normal" or 1 | "Pop" or 2 | "endlessdoorsrebound" or "Rebound" or 3 | More coming Soon
             Image1 = "rbxassetid://10483855823", -- Image1 url
             Image2 = "rbxassetid://10483999903", -- Image2 url
             Shake = true,
             Sound1 = {
-                10483790459, -- SoundId
-                { Volume = 0.5 }, -- Sound properties
+                "https://github.com/MuhXd/Models/blob/main/video0-1-3.mp3?raw=true", -- SoundId Link or Roblox ID
+                { Volume = 5 }, -- Sound properties
             },
             Sound2 = {
-                10483837590, -- SoundId
-                { Volume = 0.5 }, -- Sound properties
+                "https://github.com/MuhXd/Models/blob/main/video0-1-3.mp3?raw=true", -- SoundId Link or Roblox ID
+                { Volume = 3 }, -- Sound properties
             },
             Flashing = {
                 true, -- Enabled/Disabled
@@ -466,43 +489,57 @@ local entityTable = Spawner.createEntity({
             },
         },
     },
-    CustomDialog = {"You died to Depth", "hes a hard one", "just hide when you hear swirling", "do this when it happens!."}, -- Custom death message
+    Color = 'CuriousLight', -- CuriousLight ( Yellow ) | GuidingLight ( Blue )
+    DiffrentMessages = true,
+    CustomDialog = {  
+        {"you died to Specimen2", "crouch or you wil die", "when crouched he dosen't sence"}, -- Death Messages
+        {"make sure to follow the steps"},
+        {"you might be begennier skill with this entity", "he is not hard at all!"},
+        {"It seems you need more help with dying but sorry for the inconvience...", "hiding will aslo get you killed."},
+         {"I have told You What to do", "YOU JUST HAVE A SKILL ISSUE"}
+    }
 })
 
+-----[[ Advanced Sctipting ]]-----
 
------[[  Debug -=- Advanced  ]]-----
-entityTable.Debug.OnEntitySpawned = function()
-    print("Entity has spawned:", entityTable)
+entity.Debug.OnEntityMoving = function(Invincible,Hiding,plrCollisionPoint)
+print("Invincible: "..tostring(Invincible))
+print("Player to Entity Collision (None hiding Point): "..tostring(plrCollisionPoint))
+print("Hiding: "..tostring(Hiding))
+end
+       
+entity.Debug.OnEntitySpawned = function()
+    print("Entity has spawned:")
 end
 
-entityTable.Debug.OnEntityDespawned = function()
-    print("Entity has despawned:", entityTable)
+entity.Debug.OnEntityDespawned = function()
+    print("Entity has despawned:")
 end
 
-entityTable.Debug.OnEntityStartMoving = function()
-    print("Entity has started moving:", entityTable)
+entity.Debug.OnEntityStartMoving = function()
+    print("Entity has started moving:")
 end
 
-entityTable.Debug.OnEntityFinishedRebound = function()
-    print("Entity has finished rebound:", entityTable)
+entity.Debug.OnEntityFinishedRebound = function()
+    print("Entity has finished rebound:")
 end
 
-entityTable.Debug.OnEntityEnteredRoom = function(room)
-    print("Entity:", entityTable, "has entered room:", room)
+entity.Debug.OnEntityEnteredRoom = function(entityTable, room)
+    print("Entity:", "has entered room:",room)
 end
 
-entityTable.Debug.OnLookAtEntity = function()
-    print("Player has looked at entity:", entityTable)
+entity.Debug.OnLookAtEntity = function()
+    print("Player has looked at entity:")
 end
 
-entityTable.Debug.OnDeath = function()
+entity.Debug.OnDeath = function()
     warn("Player has died.")
 end
-------------------------------------
 
+------------------------
 
 -- Run the created entity
-Spawner.runEntity(entityTable)
+Spawner.runEntity(entity)
 end
 end)
 Spawn1()
