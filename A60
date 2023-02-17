@@ -17,7 +17,7 @@ local TW = TweenService:Create(game.Lighting.MainColorCorrection, TweenInfo.new(
 TW:Play()
 
 local entityTable = Spawner.createEntity({
-    CustomName = "G-95", -- Custom name of your entity
+    CustomName = "Happy", -- Custom name of your entity
     Model = "rbxassetid:////11395422309", -- Can be GitHub file or rbxassetid
     Speed = 400, -- Percentage, 100 = default Rush speed
     DelayTime = 5, -- Time before starting cycles (seconds)
@@ -65,7 +65,7 @@ local entityTable = Spawner.createEntity({
             },
         },
     },
-    CustomDialog = {"You Died to G-95", "hes a SCP", "don't mess around with him", "his scream will let you know."}, -- Custom death message
+    CustomDialog = {"You Died to happy", "daisy daisy", "give me your answer do", "i am craaazy all for the of you."}, -- Custom death message
 })
 
 
