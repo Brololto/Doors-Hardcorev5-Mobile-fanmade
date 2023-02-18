@@ -1,6 +1,6 @@
-game:GetService("ReplicatedStorage").GameData.LatestRoom:GetPropertyChangedSignal("Value"):Wait()
+game:GetService("ReplicatedStorage").GameData.LatestRoom:GetPropertyChangedSignal("Value")                                   
 
-local Spawner =  loadstring(game:HttpGet('https://raw.githubusercontent.com/MuhXd/DoorSuff/main/OtherSuff/DoorEntitySpawn%2BSource'))()
+local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
 
 
 Spawn1 = coroutine.wrap(function()
@@ -18,7 +18,7 @@ TW:Play()
 
 local entityTable = Spawner.createEntity({
     CustomName = "Happy", -- Custom name of your entity
-    Model = "rbxassetid:////11395422309", -- Can be GitHub file or rbxassetid
+    Model = "rbxassetid:////12222034960", -- Can be GitHub file or rbxassetid
     Speed = 400, -- Percentage, 100 = default Rush speed
     DelayTime = 5, -- Time before starting cycles (seconds)
     HeightOffset = 0,
@@ -32,7 +32,7 @@ local entityTable = Spawner.createEntity({
     },
     Cycles = {
         Min = 1,
-        Max = 2,
+        Max = 1,
         WaitTime = 1,
     },
     CamShake = {
@@ -65,7 +65,7 @@ local entityTable = Spawner.createEntity({
             },
         },
     },
-    CustomDialog = {"You Died to happy", "daisy daisy", "give me your answer do", "i am craaazy all for the of you."}, -- Custom death message
+    CustomDialog = {"You Died to Ripper", "when he screams he comes in 5 seconds", "hide when this happpens!", "you will get used to him."}, -- Custom death message
 })
 
 
@@ -424,7 +424,7 @@ local entity = Spawner.createEntity({
     DelayTime = 5, -- Time before starting cycles (seconds)
     HeightOffset = 1,
     CanKill = true,
-    NoDieOnCrouching = false,
+    NoDieOnCrouching = true,
     NoHiding = false,
     AntiCrucifix = true,
     KillRange = 100,
