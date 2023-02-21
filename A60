@@ -419,7 +419,7 @@ local Reboundcolor = Instance.new("ColorCorrectionEffect",game.Lighting) game.De
 local entityTable = Spawner.createEntity({
     CustomName = "Rebound by malinerson", -- Custom name of your entity
     Model = "rbxassetid://11459817091", -- Can be GitHub file or rbxassetid
-    Speed = 300, -- Percentage, 100 = default Rush speed
+    Speed = 500, -- Percentage, 100 = default Rush speed
     DelayTime = 5, -- Time before starting cycles (seconds)
     HeightOffset = 0,
     CanKill = true,
