@@ -7,7 +7,6 @@ Spawn1 = coroutine.wrap(function()
 while task.wait(179) do
 game:GetService("ReplicatedStorage").GameData.LatestRoom:GetPropertyChangedSignal("Value"):Wait()
 -- Create entity
-
 game.Lighting.MainColorCorrection.TintColor = Color3.fromRGB(255, 0, 0)
 game.Lighting.MainColorCorrection.Contrast = 1
 local tween = game:GetService("TweenService")
