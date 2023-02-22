@@ -424,7 +424,7 @@ local entityTable = Spawner.createEntity({
     CanKill = true,
     KillRange = 20,
     BackwardsMovement = true,
-    BreakLights = true,
+    BreakLights = false,
     FlickerLights = {
         true, -- Enabled/Disabled
         1, -- Time (seconds)
@@ -464,7 +464,7 @@ local entityTable = Spawner.createEntity({
             },
         },
     },
-    CustomDialog = {"You died to Rebound", "his speed is fast", "hide fast", "he Rebounds 1-4 times."}, -- Custom death message
+    CustomDialog = {"You died to Rebound by ping", "his speed is fast", "hide fast", "he Rebounds 1-4 times."}, -- Custom death message
 })
 
 
