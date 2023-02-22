@@ -16,8 +16,8 @@ local TW = TweenService:Create(game.Lighting.MainColorCorrection, TweenInfo.new(
 TW:Play()
 
 local entityTable = Spawner.createEntity({
-    CustomName = "Ripper", -- Custom name of your entity
-    Model = "rbxassetid:////12222034960", -- Can be GitHub file or rbxassetid
+    CustomName = "G-95", -- Custom name of your entity
+    Model = "rbxassetid:////11467719106", -- Can be GitHub file or rbxassetid
     Speed = 400, -- Percentage, 100 = default Rush speed
     DelayTime = 5, -- Time before starting cycles (seconds)
     HeightOffset = 0,
@@ -64,7 +64,7 @@ local entityTable = Spawner.createEntity({
             },
         },
     },
-    CustomDialog = {"You Died to Ripper", "when he screams he comes in 5 seconds", "hide when this happpens!", "you will get used to him."}, -- Custom death message
+    CustomDialog = {"You Died to G-95", "when he screams he comes in 5 seconds", "hide when this happpens!", "you will get used to him."}, -- Custom death message
 })
 
 
@@ -215,8 +215,8 @@ Spawn1 = coroutine.wrap(function()
 while task.wait(385) do
 -- Create entity
 local entityTable = Spawner.createEntity({
-    CustomName = "Dear God", -- Custom name of your entity
-    Model = "rbxassetid:////11393625763", -- Can be GitHub file or rbxassetid
+    CustomName = "Speciemen 2", -- Custom name of your entity
+    Model = "rbxassetid:////502243972", -- Can be GitHub file or rbxassetid
     Speed = 25, -- Percentage, 100 = default Rush speed
     DelayTime = 0, -- Time before starting cycles (seconds)
     HeightOffset = 0,
@@ -263,7 +263,7 @@ local entityTable = Spawner.createEntity({
             },
         },
     },
-    CustomDialog = {"You Died to Dear God", "He is slow so run", "Hiding wont work", "its impossible for any human kind to up close only a god can."}, -- Custom death message
+    CustomDialog = {"You Died to Specimen 2", "He is slow so run", "Hiding wont work", "its impossible for any hummy to look at him he is made with a unknown substitances."}, -- Custom death message
 })
 
 
