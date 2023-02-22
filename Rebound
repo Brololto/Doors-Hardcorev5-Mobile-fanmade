@@ -365,7 +365,7 @@ local entityTable = Spawner.createEntity({
             },
         },
     },
-    CustomDialog = {"You Died to silence", "He scary though", "Clock", "Grandfather"}, -- Custom death message
+    CustomDialog = {"You Died to silence", "Silence is slow", "i recomand you to hear out for him", "hide when this happenns!"}, -- Custom death message
 })
 
 
@@ -437,11 +437,11 @@ local entityTable = Spawner.createEntity({
     },
     CamShake = {
         true, -- Enabled/Disabled
-        {3.5, 20, 0.1, 1}, -- Shake values (don't change if you don't know)
-        100, -- Shake start distance (from Entity to you)
+        {2.5, 10, 0.1, 1}, -- Shake values (don't change if you don't know)
+        45, -- Shake start distance (from Entity to you)
     },
     Jumpscare = {
-        false, -- Enabled/Disabled
+        true, -- Enabled/Disabled
         {
             Image1 = "rbxassetid://236543215, -- Image1 url
             Image2 = "rbxassetid://236777652", -- Image2 url
@@ -465,7 +465,7 @@ local entityTable = Spawner.createEntity({
             },
         },
     },
-    CustomDialog = {"You died to Rebound", "his speed is fast", "hide fast", "he Rebounds 1-3 times."}, -- Custom death message
+    CustomDialog = {"You died to Rebound", "his speed is fast", "hide fast", "he Rebounds 1-4 times."}, -- Custom death message
 })
 
 
