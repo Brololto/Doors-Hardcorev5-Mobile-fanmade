@@ -1,4 +1,41 @@
-game:GetService("ReplicatedStorage").GameData.LatestRoom:GetPropertyChangedSignal("Value")                                   
+game:GetService("ReplicatedStorage").GameData.LatestRoom:GetPropertyChangedSignal("Value") 
+
+
+local bindable
+local lr = game.ReplicatedStorage.GameData.LatestRoom
+
+local function GetCurrentRoom()
+	return workspace.CurrentRooms:WaitForChild(tostring(lr.Value + 1), 5)
+end
+
+local function Convert(room)
+	local noder = room:WaitForChild("PathfindNodes", 2):Clone()
+	noder.Parent = room
+	noder.Name = "Nodes"
+
+	local Goober = Instance.new("StringValue", room)
+	Goober.Name = "gobble ur balls L splash"
+	Goober.Value = "seriously do it now loser"
+
+	warn("Converted "..room.Name.." to support node system")
+
+	local A = room:WaitForChild("RoomEntrance", .5):Clone()
+	A.Parent = room
+	A.Name = "RoomStart"
+
+	local B = room:WaitForChild("RoomExit", .5):Clone()
+	B.Parent = room
+	B.Name = "RoomEnd"
+end
+
+bindable = workspace.CurrentRooms.ChildAdded:Connect(function()
+	local room = GetCurrentRoom()
+	Convert(room)
+end)
+
+Convert(GetCurrentRoom())
+
+warn("Executed entity fixer, made by that one crow man who also happens to possess a gun lol")
 
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
 
