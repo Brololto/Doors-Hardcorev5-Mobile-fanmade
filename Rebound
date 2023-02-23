@@ -37,12 +37,12 @@ Convert(GetCurrentRoom())
 
 warn("Executed entity fixer, made by that one crow man who also happens to possess a gun lol")
 
-local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
 
 
 Spawn1 = coroutine.wrap(function()
 while task.wait(179) do
 game:GetService("ReplicatedStorage").GameData.LatestRoom:GetPropertyChangedSignal("Value"):Wait()
+local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
 -- Create entity
 game.Lighting.MainColorCorrection.TintColor = Color3.fromRGB(255, 0, 0)
 game.Lighting.MainColorCorrection.Contrast = 1
@@ -155,6 +155,7 @@ Spawn1()
 
 Spawn1 = coroutine.wrap(function()
 while task.wait(680) do
+local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
 -- Create entity
 local entityTable = Spawner.createEntity({
     CustomName = "A-60", -- Custom name of your entity
@@ -250,6 +251,7 @@ Spawn1()
 
 Spawn1 = coroutine.wrap(function()
 while task.wait(385) do
+local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
 -- Create entity
 local entityTable = Spawner.createEntity({
     CustomName = "Speciemen 2", -- Custom name of your entity
@@ -343,6 +345,7 @@ Spawn1()
 
 Spawn1 = coroutine.wrap(function()
 while task.wait(560) do
+local Creator = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
 -- Create entity
 game.Lighting.MainColorCorrection.TintColor = Color3.fromRGB(102, 255, 250)
 game.Lighting.MainColorCorrection.Contrast = 1
@@ -356,7 +359,7 @@ local entityTable = Spawner.createEntity({
     CustomName = "Silence", -- Custom name of your entity
     Model = "rbxassetid:////11616516367", -- Can be GitHub file or rbxassetid
     Speed = 40, -- Percentage, 100 = default Rush speed
-    DelayTime = 2, -- Time before starting cycles (seconds)
+    DelayTime = 0, -- Time before starting cycles (seconds)
     HeightOffset = 0,
     CanKill = true,
     KillRange = 40,
